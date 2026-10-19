@@ -62,11 +62,7 @@
     </div>
 
     <div class="wp-control-stack" data-wp-controls>
-      <nav class="wp-subcontrols" data-wp-subcontrols aria-label="Sub-slide navigation" hidden>
-        <button type="button" class="wp-control" data-wp-sub-prev aria-label="Previous sub-slide">←</button>
-        <span class="wp-subcounter"><span data-wp-sub-current>1</span><span class="wp-counter-divider"> / </span><span data-wp-sub-total>1</span></span>
-        <button type="button" class="wp-control" data-wp-sub-next aria-label="Next sub-slide">→</button>
-      </nav>
+      <button type="button" class="wp-control wp-subcontrol wp-subcontrol-prev" data-wp-sub-prev aria-label="Previous sub-slide" aria-hidden="true" tabindex="-1" disabled>←</button>
       <footer class="wp-controls" aria-label="Presentation controls">
         <div class="wp-progress-track" aria-hidden="true"><span data-wp-progress></span></div>
         <button type="button" class="wp-control" data-wp-prev aria-label="Previous slide">↑</button>
@@ -79,6 +75,7 @@
         <button type="button" class="wp-control" data-wp-next aria-label="Next slide">↓</button>
         <button type="button" class="wp-control wp-fullscreen" data-wp-fullscreen aria-label="Toggle full screen">⛶</button>
       </footer>
+      <button type="button" class="wp-control wp-subcontrol wp-subcontrol-next" data-wp-sub-next aria-label="Next sub-slide" aria-hidden="true" tabindex="-1" disabled>→</button>
     </div>
     <p class="wp-sr-only" data-wp-status role="status" aria-live="polite">Slide 1 of 2</p>
   </main>

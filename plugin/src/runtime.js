@@ -9,7 +9,7 @@ import { animate } from "motion";
   const userTransitions = window.webPresentationTransitions || {};
   const IDLE_MS = 260;
   const INTENT_PX = 10;
-  const VERSION = '2026.09.26-outline-contrast.1';
+  const VERSION = '2026.10.19-compact-controls.1';
   let slideIndex = Math.max(0, slides.findIndex(s => s.classList.contains('is-active')));
   let stateIndex = 0;
   let isAnimating = false;
@@ -30,6 +30,31 @@ import { animate } from "motion";
   const extent = axis => axis === 'x' ? root.clientWidth : root.clientHeight;
   const threshold = axis => Math.min(360, Math.max(120, extent(axis) * 0.3));
   const stateLabel = (si = slideIndex, pi = stateIndex) => `${si + 1}${pi ? String.fromCharCode(96 + pi) : ''}`;
+  // Keep older decks compatible when only their shared CSS and runtime are upgraded.
+  const controls = root.querySelector('[data-wp-controls]');
+  const legacySubcontrols = controls?.querySelector('[data-wp-subcontrols]');
+  if (legacySubcontrols) {
+    const previous = legacySubcontrols.querySelector('[data-wp-sub-prev]');
+    const next = legacySubcontrols.querySelector('[data-wp-sub-next]');
+    if (previous) {
+      previous.classList.add('wp-subcontrol', 'wp-subcontrol-prev');
+      controls.prepend(previous);
+    }
+    if (next) {
+      next.classList.add('wp-subcontrol', 'wp-subcontrol-next');
+      controls.append(next);
+    }
+    legacySubcontrols.remove();
+  }
+  function setSubcontrolAvailable(button, available) {
+    if (!button) return;
+    const hadFocus = document.activeElement === button;
+    button.disabled = !available;
+    button.tabIndex = available ? 0 : -1;
+    button.setAttribute('aria-hidden', String(!available));
+    button.classList.toggle('is-available', available);
+    if (!available && hadFocus) root.querySelector('[data-wp-outline-toggle]')?.focus({ preventScroll: true });
+  }
   function closePopovers() {
     root.querySelectorAll('[popover]').forEach(el => { try { el.hidePopover?.(); } catch {} });
   }
@@ -50,18 +75,12 @@ import { animate } from "motion";
     const progress = root.querySelector('[data-wp-progress]');
     const status = root.querySelector('[data-wp-status]');
     const states = statesFor(slides[slideIndex]);
-    const subcontrols = root.querySelector('[data-wp-subcontrols]');
-    const subCurrent = root.querySelector('[data-wp-sub-current]');
-    const subTotal = root.querySelector('[data-wp-sub-total]');
     const subPrevious = root.querySelector('[data-wp-sub-prev]');
     const subNext = root.querySelector('[data-wp-sub-next]');
     if (label) label.textContent = current;
     if (total) total.textContent = String(slides.length);
-    if (subcontrols) subcontrols.hidden = states.length < 2;
-    if (subCurrent) subCurrent.textContent = String(stateIndex + 1);
-    if (subTotal) subTotal.textContent = String(states.length);
-    if (subPrevious) subPrevious.disabled = stateIndex === 0;
-    if (subNext) subNext.disabled = stateIndex === states.length - 1;
+    setSubcontrolAvailable(subPrevious, stateIndex > 0);
+    setSubcontrolAvailable(subNext, stateIndex < states.length - 1);
     if (progress) progress.style.width = `${(slideIndex + 1) / slides.length * 100}%`;
     if (status) status.textContent = `Slide ${current} of ${slides.length}`;
     root.querySelectorAll('[data-wp-persistent]').forEach(el => {
