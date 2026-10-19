@@ -1,0 +1,4 @@
+interface:
+  display_name: "Refine Web Presentation"
+  short_description: "Improve slide typography, diagrams, spacing, and UX"
+  default_prompt: "Use $refine-web-presentation to improve this existing web presentation while preserving its content, brand, and navigation shell."

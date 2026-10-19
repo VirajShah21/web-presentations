@@ -1,0 +1,10 @@
+node_modules/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+*.log
+dist/
+playwright-report/
+test-results/

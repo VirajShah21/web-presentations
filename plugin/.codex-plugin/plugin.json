@@ -1,0 +1,39 @@
+{
+  "name": "web-presentations",
+  "version": "0.1.0",
+  "license": "MIT",
+  "homepage": "https://github.com/VirajShah21/web-presentations",
+  "repository": "https://github.com/VirajShah21/web-presentations",
+  "description": "Create, refine, and package polished interactive web presentations as portable ZIP files.",
+  "author": {
+    "name": "Viraj"
+  },
+  "keywords": [
+    "presentation",
+    "slides",
+    "web",
+    "motion",
+    "html",
+    "zip"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Web Presentations",
+    "shortDescription": "Create interactive presentations for the web.",
+    "longDescription": "Create, refine, and iteratively edit web presentations from natural-language prompts. Improve typography, web-native diagrams, spacing, and interaction design while preserving the existing shell. Every new deck uses a shared two-axis navigation shell and packages to a portable ZIP containing index.html and local assets.",
+    "developerName": "Viraj",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Create a web presentation about\u2026",
+      "Add a sub-slide to this presentation.",
+      "Package this presentation as a ZIP.",
+      "Refine this presentation\u2019s typography, diagrams, spacing, and user experience without changing its shell."
+    ],
+    "brandColor": "#4038C9"
+  }
+}

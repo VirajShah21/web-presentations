@@ -1,0 +1,12 @@
+{
+  "name": "web-presentations",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Create, refine, and package interactive HTML presentations as portable ZIP files.",
+  "author": {
+    "name": "Viraj Shah"
+  },
+  "homepage": "https://github.com/VirajShah21/web-presentations",
+  "repository": "https://github.com/VirajShah21/web-presentations",
+  "keywords": ["presentation", "slides", "html", "motion"]
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Web Presentation</title>
+  <link rel="stylesheet" href="../assets/template/assets/presentation.css">
+</head>
+<body>
+  <main class="wp-root" data-web-presentation data-title="Web Presentation" data-theme="dark" style="--wp-accent: #A9F05B" aria-label="Web presentation">
+    <div class="wp-stage" aria-live="off">
+<section class="wp-slide" data-transition="scroll"><div class="wp-states"><article class="wp-state"><div class="wp-content"><h2>Section 1, state 0</h2><p>Scroll and gesture test fixture.</p><div id="horizontal" tabindex="0" style="overflow:auto;width:300px"><div style="width:1500px;height:80px">Wide nested scroller</div></div><input id="range" type="range" min="0" max="100"><button id="noop">Native button</button><div data-magic-move="marker" style="background:#cdf;padding:20px;width:200px;margin-left:0px">Shared marker</div></div></article><article class="wp-state"><div class="wp-content"><h2>Section 1, state 1</h2><p>Scroll and gesture test fixture.</p><div data-magic-move="marker" style="background:#cdf;padding:20px;width:300px;margin-left:100px">Shared marker</div></div></article></div></section><section class="wp-slide" data-transition="scroll"><div class="wp-states"><article class="wp-state"><div class="wp-content"><h2>Section 2, state 0</h2><p>Scroll and gesture test fixture.</p><div style="height:1500px;background:linear-gradient(#eee,#aaa)">Long content</div><p>Bottom of long content</p><div data-magic-move="marker" style="background:#cdf;padding:20px;width:200px;margin-left:0px">Shared marker</div></div></article><article class="wp-state"><div class="wp-content"><h2>Section 2, state 1</h2><p>Scroll and gesture test fixture.</p><div data-magic-move="marker" style="background:#cdf;padding:20px;width:300px;margin-left:100px">Shared marker</div></div></article></div></section><section class="wp-slide" data-transition="scroll"><div class="wp-states"><article class="wp-state"><div class="wp-content"><h2>Section 3, state 0</h2><p>Scroll and gesture test fixture.</p><div data-magic-move="marker" style="background:#cdf;padding:20px;width:200px;margin-left:0px">Shared marker</div></div></article></div></section><section class="wp-slide" data-transition="scroll"><div class="wp-states"><article class="wp-state"><div class="wp-content"><h2>Section 4, state 0</h2><p>Scroll and gesture test fixture.</p><div data-magic-move="marker" style="background:#cdf;padding:20px;width:200px;margin-left:0px">Shared marker</div></div></article><article class="wp-state"><div class="wp-content"><h2>Section 4, state 1</h2><p>Scroll and gesture test fixture.</p><div data-magic-move="marker" style="background:#cdf;padding:20px;width:300px;margin-left:100px">Shared marker</div></div></article></div></section>
+    </div>
+
+    <!-- Persistent components stay outside the slide stage. Use data-show-on="1 2a" to scope visibility. -->
+    <div class="wp-persistent-layer" aria-label="Persistent presentation elements">
+      <span class="wp-brand" data-wp-persistent data-show-on="all">YOUR BRAND</span>
+    </div>
+
+    <footer class="wp-controls" aria-label="Presentation controls">
+      <div class="wp-progress-track" aria-hidden="true"><span data-wp-progress></span></div>
+      <button type="button" class="wp-control" data-wp-prev aria-label="Previous slide">↑</button>
+      <span class="wp-counter"><span data-wp-current>1</span><span class="wp-counter-divider"> / </span><span data-wp-total>2</span></span>
+      <button type="button" class="wp-control" data-wp-next aria-label="Next slide">↓</button>
+      <button type="button" class="wp-control wp-fullscreen" data-wp-fullscreen aria-label="Toggle full screen">⛶</button>
+    </footer>
+    <p class="wp-sr-only" data-wp-status role="status" aria-live="polite">Slide 1 of 2</p>
+  </main>
+  <script src="../assets/template/assets/custom-transitions.js"></script>
+  <script src="../assets/template/assets/presentation-runtime.js"></script>
+</body>
+</html>

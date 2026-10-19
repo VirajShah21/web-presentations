@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Web Presentation</title>
+  <link rel="stylesheet" href="assets/presentation.css">
+</head>
+<body>
+  <main class="wp-root" data-web-presentation data-title="Web Presentation" data-theme="dark" style="--wp-accent: #A9F05B" aria-label="Web presentation">
+    <div class="wp-stage" aria-live="off">
+      <!-- Replace this sample section with your slides. Duplicate sections for vertical slides. -->
+      <section class="wp-slide is-active" data-transition="scroll" aria-label="Slide 1">
+        <div class="wp-states">
+          <article class="wp-state is-active" aria-label="Slide 1">
+            <div class="wp-content">
+              <p class="wp-eyebrow">A web presentation</p>
+              <h1>Your title goes here</h1>
+              <p class="wp-lede">Use the arrow keys, scroll, or the controls to explore.</p>
+              <span class="wp-hint">Continue ↓</span>
+              <p><button class="wp-interactive" type="button" popovertarget="wp-sample-note">Open an annotation</button></p>
+              <aside id="wp-sample-note" class="wp-popover" popover>
+                <strong>A useful detail</strong>
+                <p>This click-to-open note uses the browser Popover API. Use this pattern for optional context, definitions, or source notes.</p>
+                <button class="wp-interactive" type="button" popovertarget="wp-sample-note" popovertargetaction="hide">Close</button>
+              </aside>
+            </div>
+          </article>
+          <article class="wp-state" aria-label="Slide 1a">
+            <div class="wp-content">
+              <p class="wp-eyebrow">Sub-slide 1a</p>
+              <h2>A second state of this slide</h2>
+              <p>Horizontal navigation reveals additional states without advancing the main slide.</p>
+            </div>
+          </article>
+          <article class="wp-state" aria-label="Slide 1b">
+            <div class="wp-content">
+              <p class="wp-eyebrow">Sub-slide 1b</p>
+              <h2>Another angle</h2>
+              <p>Replace these examples with the story, media, and visual design your presentation needs.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="wp-slide" data-transition="scroll" aria-label="Slide 2" hidden>
+        <div class="wp-states">
+          <article class="wp-state" aria-label="Slide 2">
+            <div class="wp-content">
+              <p class="wp-eyebrow">Slide 2</p>
+              <h2>A new main slide</h2>
+              <p>Main slides move vertically. Sub-slides move horizontally within a main slide.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <!-- Persistent components stay outside the slide stage. Use data-show-on="1 2a" to scope visibility. -->
+    <div class="wp-persistent-layer" aria-label="Persistent presentation elements">
+      <span class="wp-brand" data-wp-persistent data-show-on="all">YOUR BRAND</span>
+    </div>
+
+    <div class="wp-control-stack" data-wp-controls>
+      <nav class="wp-subcontrols" data-wp-subcontrols aria-label="Sub-slide navigation" hidden>
+        <button type="button" class="wp-control" data-wp-sub-prev aria-label="Previous sub-slide">←</button>
+        <span class="wp-subcounter"><span data-wp-sub-current>1</span><span class="wp-counter-divider"> / </span><span data-wp-sub-total>1</span></span>
+        <button type="button" class="wp-control" data-wp-sub-next aria-label="Next sub-slide">→</button>
+      </nav>
+      <footer class="wp-controls" aria-label="Presentation controls">
+        <div class="wp-progress-track" aria-hidden="true"><span data-wp-progress></span></div>
+        <button type="button" class="wp-control" data-wp-prev aria-label="Previous slide">↑</button>
+        <div class="wp-outline-wrap">
+          <button type="button" class="wp-counter-button" data-wp-outline-toggle aria-expanded="false" aria-haspopup="true" aria-controls="wp-presentation-outline" aria-label="Open presentation outline">
+            <span class="wp-counter"><span data-wp-current>1</span><span class="wp-counter-divider"> / </span><span data-wp-total>2</span></span>
+          </button>
+          <nav class="wp-outline" id="wp-presentation-outline" data-wp-outline aria-label="Presentation outline" hidden></nav>
+        </div>
+        <button type="button" class="wp-control" data-wp-next aria-label="Next slide">↓</button>
+        <button type="button" class="wp-control wp-fullscreen" data-wp-fullscreen aria-label="Toggle full screen">⛶</button>
+      </footer>
+    </div>
+    <p class="wp-sr-only" data-wp-status role="status" aria-live="polite">Slide 1 of 2</p>
+  </main>
+  <script src="assets/custom-transitions.js"></script>
+  <script src="assets/presentation-runtime.js"></script>
+</body>
+</html>

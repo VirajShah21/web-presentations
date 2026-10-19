@@ -1,0 +1,20 @@
+{
+  "name": "web-presentations",
+  "interface": {
+    "displayName": "Web Presentations"
+  },
+  "plugins": [
+    {
+      "name": "web-presentations",
+      "source": {
+        "source": "local",
+        "path": "./plugin"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

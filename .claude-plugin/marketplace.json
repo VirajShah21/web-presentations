@@ -1,0 +1,13 @@
+{
+  "name": "web-presentations",
+  "owner": {
+    "name": "Viraj Shah"
+  },
+  "plugins": [
+    {
+      "name": "web-presentations",
+      "source": "./plugin",
+      "description": "Create, refine, and package interactive HTML presentations as portable ZIP files."
+    }
+  ]
+}

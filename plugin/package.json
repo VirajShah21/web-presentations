@@ -1,0 +1,15 @@
+{
+  "name": "web-presentations-shell",
+  "version": "0.1.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "esbuild src/runtime.js --bundle --format=iife --target=es2020 --minify --outfile=assets/template/assets/presentation-runtime.js"
+  },
+  "dependencies": {
+    "motion": "13.4.3"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10"
+  }
+}
